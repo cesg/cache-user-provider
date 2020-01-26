@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Cesg\\Auth\\CacheUserProvider"
+                "Cesg\\Auth\\CacheUserServiceProvider"
             ]
         }
     },
