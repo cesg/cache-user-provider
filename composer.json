@@ -1,0 +1,46 @@
+{
+    "name": "cesg/cache-user-provider",
+    "description": "eloquent user provider",
+    "type": "library",
+    "require": {
+   		"php": "^7.2",
+    	"illuminate/support": "^6.0",
+    	"illuminate/contracts": "^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "mockery/mockery": "^1.3",
+        "orchestra/testbench": "^4.5",
+        "phpunit/phpunit": "^8.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian SG",
+            "email": "cesgbla@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Cesg\\Auth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cesg\\Auth\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cesg\\Auth\\CacheUserProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
