@@ -77,9 +77,13 @@ class CacheUserProvider implements UserProvider
     {
         $key = "{$this->prefix()}:".\implode(':', Arr::except($credentials, 'password'));
 
-        return $this->cache->remember($key, $this->expire(), function () use ($credentials) {
-            return $this->getProvider()->retrieveByCredentials($credentials);
-        });
+        return $this->cache->remember(
+            $key,
+            now()->addMinutes(1),
+            function () use ($credentials) {
+                return $this->getProvider()->retrieveByCredentials($credentials);
+            }
+        );
     }
 
     private function prefix(): string
